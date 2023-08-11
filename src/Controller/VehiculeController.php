@@ -43,8 +43,8 @@ class VehiculeController extends AbstractController
         ]);
     }
     // modifier les modeles de voitures pour l'administrateur
-    // #[Route('/admin/{id}/modifier', name: 'modifier_vehicule')]
-    #[Route('/admin/modifier', name: 'modifier_vehicule')]
+    #[Route('/admin/{id}/modifier', name: 'modifier_vehicule')]
+    
     public function modifiervehicule(Vehicule $vehicule = null, Request $request, EntityManagerInterface $manager)
     { 
         dump($vehicule);
@@ -76,8 +76,8 @@ class VehiculeController extends AbstractController
 
         // supprimer des modeles de voitures pour l'admin
         // #[Route('admin/supprimer/{id}', name:"supprimer_vehicule")]
-            // #[Route('/admin/supprimer/{id}', name: 'supprimer_vehicule')]
-            #[Route('/admin/supprimer', name: 'supprimer_vehicule')]
+            #[Route('/admin/supprimer/{id}', name: 'supprimer_vehicule')]
+            
             public function supprimer(Vehicule $vehicule, EntityManagerInterface $manager)
             {
                 $manager->remove($vehicule);
