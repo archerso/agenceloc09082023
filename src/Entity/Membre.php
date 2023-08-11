@@ -2,15 +2,17 @@
 
 namespace App\Entity;
 
-use App\Repository\MembreRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\MembreRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: MembreRepository::class)]
 class Membre implements UserInterface, PasswordAuthenticatedUserInterface
 {
+    
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

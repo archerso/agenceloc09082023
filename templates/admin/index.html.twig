@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <h1>BACKOFFICE </h1>
+<div class="container mb-5">
+    <table class="table table-dark">
+    <thead>
+        <tr>
+            
+            <th>nom</th>
+            <th>email</th>
+            <th>mot de passe</th>          
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in membre %}
+        <tr>
+            <td>{{item.nom }}</td>
+            <td>{{item.email }}</td>
+            <td>{{item.password }}</td>
+             td>
+            <a href="{{ path("modifier", {id: item.id}) }}" class="text-warning"><i class="bi bi-pencil-square"></i></a>
+            <a href="{{ path('delete', {id: item.id})}}" class="text-danger"><i class="bi bi-trash"></i></a>
+            </td>
+        
+        </tr>
+
+    {% endfor %}
+ </tbody>
+    {% endblock %}

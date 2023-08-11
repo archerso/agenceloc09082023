@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ajout vehicule{% endblock %}
+
+{% block body %}
+<h1 class="text-center my-4">Ajout Véhicule<h1>
+<div class="container mt-3 mb-2">
+ 
+ </div>
+<div class="container mb-5">
+{# tet de colonne #}
+    <table class="table table-dark">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>titre</th>
+            <th>marque</th>
+            <th>modele</th>
+            <th>description</th>
+            <th>photo</th>
+            <th>prix_journalier</th>
+            <th>date_enregistrement</th>
+           
+        </tr>
+    </thead>
+    <tbody> 
+  
+    </tbody>
+        </table>     
+    {# <h2 class="text-center mt-4">ajouter un vehicule</h2> #}
+    {# formulaire #}
+        {{form_start(formvoiture, {'attr': {'novalidate': 'novalidate'}})}}
+        <div class="row d-flex">
+        <div class="col-md-3">{{form_row(formvoiture.title)}}</div>
+        
+        <div class="col-md-3">{{form_row(formvoiture.marque)}}</div>
+        
+        <div class="col-md-3">{{form_row(formvoiture.modele)}}</div>
+        
+        <div class="col-md-3">{{form_row(formvoiture.description)}}</div>
+        
+        <div class="col-md-4">{{form_row(formvoiture.photo)}}</div>
+        
+        <div class="col-md-4"> {{form_row(formvoiture.prix_journalier)}}</div>
+        
+        <div class="col-md-12">{{form_row(formvoiture.date_enregistrement)}}</div>
+        
+        <button type="submit" class="btn btn-primary">valider</button>
+        </div> 
+        {{form_end(formvoiture)}}
+</div> 
+
+  {# {% for item in vehicule %}
+    <table>
+        <tr>
+            <td>{{item.id }}</td>
+            <td>{{item.titre }}</td>
+            <td>{{item.marque}}</td>
+            <td>{{item.modele}}</td>
+            <td>{{item.description }}</td>
+            <td>{{item.photo }}</td>
+            <td>{{item.prix_journalier}}</td>
+            <td>{{item.date_enregistrement|date("d/m/Y") }}</td>
+            <td>
+            <a href="{{ path("modifier", {id: item.id}) }}" class="text-warning"><i class="bi bi-pencil-square"></i></a>
+            <a href="{{ path('delete', {id: item.id})}}" class="text-danger"><i class="bi bi-trash"></i></a>
+            </td>
+        </tr>
+    {% endfor %} #}
+
+
+{% endblock %}
